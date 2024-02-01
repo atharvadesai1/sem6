@@ -4,7 +4,6 @@ def playfare(key,plaintext):
     cols = 5
     cyphertext = ''
     matrix = [[0 for j in range(cols)] for i in range(rows)]
-
     k=0 
     m=0 
     for i in range(5):
@@ -16,17 +15,16 @@ def playfare(key,plaintext):
                 while letters[m] in key:
                     m+=1  
                 matrix[i][j] = letters[m]
-                m+=1
-                
+                m+=1                
     print('Matrix Converted '+str(matrix))
-
+    
     def find_indices(matrix, element):
         for i, row in enumerate(matrix):
             for j, value in enumerate(row):
                 if value == element:
                     return i, j
         return None
-
+    
     if(len(plaintext)%2!=0):
             plaintext+=plaintext+'x'
 
@@ -46,7 +44,7 @@ def playfare(key,plaintext):
 
     return cyphertext
 
-print('*****************PLAYFARE-CYPHER*****************')
+print('*****************PLAYFAIR-CYPHER*****************')
 print()
 key = input('Enter the Key: ')
 plaint_text = input('Enter the Plain Text: ')
