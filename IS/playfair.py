@@ -1,4 +1,4 @@
-def playfare(key,plaintext):
+def playfair(key,plaintext):
     letters = 'abcdefghiklmnopqrstuvwxyz'
     rows = 5
     cols = 5
@@ -8,7 +8,7 @@ def playfare(key,plaintext):
     m=0 
     for i in range(5):
         for j in range(5): 
-            if(k<=4):
+            if(k<=len(key)-1):
                 matrix[i][j] = key[k]
                 k+=1
             else:
@@ -26,12 +26,12 @@ def playfare(key,plaintext):
         return None
     
     if(len(plaintext)%2!=0):
-            plaintext+=plaintext+'x'
+            plaintext+='x'
 
     for i in range(len(plaintext)-1):
         if(plaintext[i]==plaintext[i+1]):
-            plaintext+= plaintext[:i]+'q'+plaintext[i+1:]+'q'
-
+            plaintext = plaintext[:i+1]+'q'+plaintext[i+1:]+'q'
+    print(plaintext)
     for i in range(0,len(plaintext),2):
         i1,j1 = find_indices(matrix, plaintext[i])
         i2,j2 = find_indices(matrix, plaintext[i+1])
@@ -48,6 +48,6 @@ print('*****************PLAYFAIR-CYPHER*****************')
 print()
 key = input('Enter the Key: ')
 plaint_text = input('Enter the Plain Text: ')
-cypher_text = playfare(key,plaint_text)
+cypher_text = playfair(key,plaint_text)
 print('Cypher Text: '+cypher_text)
     
