@@ -1,4 +1,4 @@
-print('*****************Amortized Analysis*****************')
+print('*****************Amortized Analysis (Aggregate Method)*****************')
 arr = [11,7,8,9,3,2,7,8,5]
 print(f'Items Taken: {arr}')
 print()
