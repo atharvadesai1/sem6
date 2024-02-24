@@ -31,8 +31,8 @@ n = p*q
 fi = (p-1)*(q-1)
 e = findinge(fi)
 d = findingd(e,fi)
-print(f'Sender Key (e) {e}')
-print(f'Reciever Key (d) {d}')
+print(f'Public Key (e) {e}')
+print(f'Private Key (d) {d}')
 
 encrypted = (m**e)%n
 print(f'Message Encrypted: {encrypted}')
