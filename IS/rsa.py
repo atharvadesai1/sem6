@@ -22,9 +22,9 @@ def findingd(e,fi):
             d+=1
 
 print('**************RSA ALGORITHM**************')
-p = 41
-q = 44
-m =12
+p = 31
+q = 19
+m =175
 print()
 print(f'Message Data: {m}')
 n = p*q
@@ -37,7 +37,5 @@ print(f'Private Key (d) {d}')
 encrypted = (m**e)%n
 print(f'Message Encrypted: {encrypted}')
 
-msg_recieved = encrypted
-
-decrypted = (msg_recieved**d)%n
+decrypted = (encrypted**d)%n
 print(f'Message Decrypted: {decrypted}')
