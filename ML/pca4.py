@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from numpy.linalg import eig
 
-df = pd.read_csv('Salary_Data.csv')
+df = pd.read_csv('Salary_dataset.csv')
 x = df.iloc[:, 0]
 y = df.iloc[:, 1]
 
