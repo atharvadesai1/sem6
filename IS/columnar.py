@@ -16,11 +16,11 @@ def texttonumeric(keytext):
     return numtext
  
  
-key = 'thunder'
-text = 'iamveryhappytodaynice'
-cyphertext = ''
 print('*******************COLUMNAR CIPHER*******************')
 print()
+key = input('Enter the key: ')
+text = input('Enter the plaintext: ')
+cyphertext = ''
 print(f'Key: {key}')
 print(f'Plain Text: {text}')
  
@@ -30,21 +30,25 @@ for e in key_order:
     key_order_str+=str(e)
 print(f'Key Numeric: {key_order_str}')
  
-rows = int(len(text)/len(key))
-matrix = [[0 for _ in range(len(key))] for _ in range(rows)]
+rows = int(len(text)/len(key))+1
+matrix = [['x' for _ in range(len(key))] for _ in range(rows)]
  
 i = 0
 for array in matrix:
     for j in range(len(array)):
-        array[j] = text[i]
-        i+=1
+        if i < len(text):
+            array[j] = text[i]
+            i+=1
 print()
 print('Matrix')
-print(matrix)
+key_orderf = [str(e) for e in key_order]
+print(key_orderf)
+for mat in matrix:
+    print(mat)
 i=0
  
 pit =1
-for i in range(len(key)):
+for _ in range(len(key)):
     index = key_order.index(pit)
     for array in matrix:
         cyphertext+= array[index]
