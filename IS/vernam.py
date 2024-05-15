@@ -1,8 +1,8 @@
 # Vernam Cipher
 
 
-plain = "HELLO"
-key = "BAXYC"
+plain = "hellorathodtoourfamily"
+key = "barcelona"
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 def position(s):
@@ -15,6 +15,8 @@ def position(s):
 def vernam_enc(plain,key):
   plain = position(plain)
   key = position(key)
+  print(f'plain {plain}')
+  print(f'key {key}')
   cipher = []
   cipher_text = ""
   for i in range(len(plain)):
