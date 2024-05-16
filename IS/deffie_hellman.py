@@ -11,7 +11,7 @@ y = 9 #y is the private key of alice
 A = pow(g,x,n) #this will be send to bob
 print(f'Alice sends publically A={A} to Bob')
 B = pow(g,y,n) #this will be send to alice
-print(f'Alice sends publically B={B} to Bob')
+print(f'Alice sends publically B={B} to Bob')     
 
 #Now Bob recieves B from Alice
 k1 = pow(B,x,n)
